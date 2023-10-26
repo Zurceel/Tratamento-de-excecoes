@@ -1,21 +1,22 @@
 if __name__ == '__main__':
-    pessoas = ["Gabriel", "Geovanna"]
+    produtosDisponiveis = ['Laranja', 'Suco', 'Carne', 'Refrigerante']
+    listaProdutos = []
+    produto = None
 
-    print(pessoas)
+    while True:
+        produto = input('Digite o produto que deseja: (Digite 0 para finalizar)')
 
-    pessoas.insert(0, "Gael")
+        if produto == '0':
+            break
 
-    print(pessoas)
+        if produto in produtosDisponiveis:
+            listaProdutos.append(produto)
+        else:
+            print(f'O produto {produto}  não esta disponível')
 
-    pessoas.remove("Gabriel")
 
-    print(pessoas)
+    print('Produtos Disponíveis:')
+    print(sorted(produtosDisponiveis))
 
-    pessoas.sort()
-    print(pessoas)
-
-    quantidade = pessoas.count("Geovanna")
-    print(quantidade)
-
-    pessoas.clear()
-    print(pessoas)
+    print('Produtos comprados:')
+    print(listaProdutos)
